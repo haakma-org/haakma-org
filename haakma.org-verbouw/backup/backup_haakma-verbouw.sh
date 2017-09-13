@@ -9,5 +9,5 @@ WWW_DIR=/home/sites
 
 mysqldump -p${SQL_PASSWORD} ${SQL_SCHEMA} > ${BASE_DIR}/${DATE}_haakma_verbouw.sql
 
-tar -cvf ${BASE_DIR}/${DATE}_haakma_bouw.tar ${WWW_DIR}/verbouw.haakma.org/
+tar -cvf ${BASE_DIR}/${DATE}_haakma_verbouw.tar ${WWW_DIR}/verbouw.haakma.org/
 

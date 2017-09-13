@@ -35,8 +35,11 @@ The job that are located at the Jenkins are divided into 2 main items:
 
 * haakma.org-site
 * haakma.org-webmail
+* haakma.org-verbouw
 
 * grotevriendelijkedames.nl-site
+
+* wiebranddeboer.nl-site
 
 * bronsenproject.nl-site
 * bronsenproject.nl-webmail
@@ -48,8 +51,7 @@ The job that are located at the Jenkins are divided into 2 main items:
 
 ## Granny-Connect
 
-* granny-connect.com-site
-* granny-connect.com-backen
+* granny-connect.com-backend
 * granny-connect.com-frontend
 
 # Troubleshooting

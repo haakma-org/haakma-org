@@ -4,6 +4,8 @@ USER root
 
 # Install gnupg-key package
 RUN apk add gpgme
+# Install mysql-client for mysqldump command
+RUN apk add mysql-client
 
 # Setup backup directories
 RUN mkdir /home/backup

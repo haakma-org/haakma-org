@@ -9,5 +9,6 @@ RUN chown jenkins:jenkins /home/backup
 
 USER jenkins
 
-COPY nexus/sonatype/settings.xml /var/jenkins_home/.m2/settings.xml
-COPY nexus/sonatype/haakma.asc /var/jenkins_home/.m2/haakma.asc
+COPY sonatype/* /var/jenkins_home/.m2/
+RUN mkdir /var/jenkins_home/.gnupg
+COPY gnupg/* /var/jenkins_home/.gnupg/

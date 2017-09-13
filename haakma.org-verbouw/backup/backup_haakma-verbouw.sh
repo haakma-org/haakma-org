@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_PATH=${0}
+BASE_PATH=`pwd`
 
 source ${BASE_PATH}/utils/read_configuration.sh
 

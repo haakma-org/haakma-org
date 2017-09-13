@@ -1,7 +1,5 @@
 #!/bin/bash
 
-. ../../utils/read_configuration.sh
-
 read_config "/home/config/haakma_webmail.properties"
 
 DATE=`date +%Y-%m-%d`

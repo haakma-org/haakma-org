@@ -1,6 +1,6 @@
 node {
   def gitRemoteUser = 'jenkins'
-  def gitRemoteUrl = 'github.com/haakma-org/haakma-org.git'
+  def gitRemoteUrl = 'github.com/haakma-org/haakma-org'
   stage('Preparation') {
     // Clean workspace
     step([$class: 'WsCleanup', cleanWhenFailure: false])

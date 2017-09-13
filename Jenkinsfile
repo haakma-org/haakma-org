@@ -9,16 +9,20 @@ node {
   }
   stage('Backup haakma.org') {
     echo "Backup haakma.org"
-    sh "haakma.org-site/backup/backup_haakma-site.sh"
+    sh "./haakma.org-site/backup/backup_haakma-site.sh"
   }
   stage('Backup verbouw.haakma.org') {
     echo "Backup verbouw.haakma.org"
-    sh "haakma.org-verbouw/backup/backup_haakma-verbouw.sh"
+    sh "./haakma.org-verbouw/backup/backup_haakma-verbouw.sh"
   }
   stage('Backup webmail.haakma.org') {
     echo "Backup webmail.haakma.org"
-    sh "haakma.org-webmail/backup/backup_haakma-webmail.sh"
+    sh "./haakma.org-webmail/backup/backup_haakma-webmail.sh"
   }
+  stage('Cleanup old backups') {
+      echo "Cleanup old backups"
+      sh "./utils/move_old_backups.sh"
+    }
   stage('Notify') {
     emailext body: '''Hi everybody,
       <br>

@@ -6,8 +6,9 @@ services:
     ports:
      - 7000:8080
     volumes:
-     - /home/jenkins/jenkins_home:/var/jenkins_home/
+     - /home/jenkins/jenkins_home:/var/jenkins_home
      - /home/sido/backup:/home/backup
+     - /home/sido/config/sites:/home/config/sites
      - /srv/www:/home/sites
      - /srv/maildirs:/home/mail
      - /etc/postfix:/home/config/postfix

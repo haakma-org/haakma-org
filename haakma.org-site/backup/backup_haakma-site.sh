@@ -1,5 +1,9 @@
 #!/bin/bash
 
+BASE_PATH=${0}
+
+source ${BASE_PATH}/utils/read_configuration.sh
+
 read_config "/home/config/haakma_site.properties"
 
 DATE=`date +%Y-%m-%d`

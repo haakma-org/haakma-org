@@ -1,7 +1,11 @@
 #!/bin/bash
 
+SQL_PASSWORD=${1}
+SQL_SCHEMA=${2}
+
 DATE=`date +%Y-%m-%d`
+BASE_DIR=/home/sido/backup/today
 
-mysqldump -pKoRn0512 haakma > /home/sido/backup/today/${DATE}_haakma.sql
+mysqldump -p${SQL_PASSWORD} ${SQL_SCHEMA} > ${BASE_DIR}/${DATE}_haakma.sql
 
-tar -cvf /home/sido/backup/today/${DATE}_haakma.tar /srv/www/haakma.org/
+tar -cvf ${BASE_DIR}/${DATE}_haakma.tar /srv/www/haakma.org/

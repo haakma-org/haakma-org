@@ -8,6 +8,10 @@ function read_config() {
 
     PROPERTY_FILE=${1}
 
+    echo "***************************************************************"
+    echo "* Determine configuration                                     *"
+    echo "***************************************************************"
+
     if [ -f "${PROPERTY_FILE}" ]
     then
         echo "[INFO] ${PROPERTY_FILE} found"
@@ -28,4 +32,5 @@ function read_config() {
         echo "[ERROR] ${PROPERTY_FILE} not found"
         exit 1
     fi
+    echo "***************************************************************"
 }

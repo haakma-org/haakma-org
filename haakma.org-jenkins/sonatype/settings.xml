@@ -1,0 +1,13 @@
+<settings>
+  <servers>
+    <server>
+      <id>gpg.passphrase</id>
+      <passphrase>{DjE5xpyisa4H2C6TbKlyW2sAvdwJ7ZVAdVIXG7fQwAw=}</passphrase>
+    </server>
+    <server>
+      <id>ossrh</id>
+      <username>sido</username>
+      <password>{DjE5xpyisa4H2C6TbKlyW2sAvdwJ7ZVAdVIXG7fQwAw=}</password>
+    </server>
+  </servers>
+</settings>

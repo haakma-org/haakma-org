@@ -1,0 +1,10 @@
+version : '3'
+
+services:
+  jenkins-haakma-org:
+    build: .
+    ports:
+     - 7000:8080
+    volumes:
+     - /home/jenkins/jenkins_home:/var/jenkins_home/
+    restart: always

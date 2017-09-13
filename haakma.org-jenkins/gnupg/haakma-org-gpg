@@ -1,0 +1,15 @@
+%echo Generating a standard key
+Key-Type: DSA
+Key-Length: 2048
+Subkey-Type: ELG-E
+Subkey-Length: 2048
+Name-Real: Sido Haakma
+Name-Comment: Developer of haakma.org artifacts
+Name-Email: sido@haakma.org
+Expire-Date: 0
+Passphrase: KoRn0512
+%pubring haakma-org-gpg.pub
+%secring haakma-org-gpg.sec
+# Do a commit here, so that we can later print "done" :-)
+%commit
+%echo done

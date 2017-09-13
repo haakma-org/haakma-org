@@ -1,0 +1,19 @@
+version : '3'
+
+services:
+  docker-haakma-org:
+   restart: always
+   image: rancher/server:latest
+   ports:
+    - 8080:8080
+   volumes:
+    - "/home/sido/rancher/mysql:/var/lib/mysql/"
+  
+  portainer-haakma-org:
+   restart: always
+   image: portainer/portainer:latest
+   ports:
+    - 9000:9000
+   volumes:
+    - "/var/run/docker.sock:/var/run/docker.sock"
+

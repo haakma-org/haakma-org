@@ -1,7 +1,8 @@
 #!/bin/bash
 
-SQL_PASSWORD=${1}
-SQL_SCHEMA=${2}
+. ../../utils/read_configuration.sh
+
+read_config "/home/config/haakma_webmail.properties"
 
 DATE=`date +%Y-%m-%d`
 BASE_DIR=/home/backup/today
@@ -10,7 +11,8 @@ MAIL_DIR=/home/mail
 POSTFIX_CONFIG_DIR=/home/config/postfix/
 DOVECOT_CONFIG_DIR=/home/config/dovecot/
 
-mysqldump -p${SQL_PASSWORD} ${SQL_SCHEMA} > ${BASE_DIR}/${DATE}_haakma_mail.sql
+echo "[INFO] Backup MySQL schema : ${SQL_SCHEMA}"
+mysqldump -u ${SQL_USER} -p${SQL_PASSWORD} ${SQL_SCHEMA} > ${BASE_DIR}/${DATE}_haakma_mail.sql
 
 tar -cvf ${BASE_DIR}/${DATE}_haakma_mail.tar ${WWW_DIR}/webmail.haakma.org/
 tar -cvf ${BASE_DIR}/${DATE}_haakma_mail_postfix.tar ${POSTFIX_CONFIG_DIR}

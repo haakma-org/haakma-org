@@ -3,7 +3,7 @@
 
 . ../../utils/read_configuration.sh
 
-read_config "/home/config/haakma_webmail.properties"
+read_config "/home/config/haakma_site.properties"
 
 DATE=`date +%Y-%m-%d`
 BASE_DIR=/home/backup/today

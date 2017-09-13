@@ -13,6 +13,13 @@ RUN chown jenkins:jenkins /home/backup
 RUN mkdir /home/sites/
 RUN chown jenkins:jenkins /home/sites
 
+# Setup postfix and dovecot configuration and mail directories
+RUN mkdir /home/mail
+RUN mkdir -p /home/config/postfix
+RUN mkdir -p /home/config/dovecot
+RUN chown -R jenkins:jenkins /home/mail
+RUN chown -R jenkins:jenkins /home/config
+
 # Return to user jenkins (was root)
 USER jenkins
 

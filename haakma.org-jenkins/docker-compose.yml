@@ -9,4 +9,7 @@ services:
      - /home/jenkins/jenkins_home:/var/jenkins_home/
      - /home/sido/backup:/home/backup
      - /srv/www:/home/sites
+     - /srv/maildirs:/home/mail
+     - /etc/postfix:/home/config/postfix
+     - /etc/dovecot:/home/config/dovecot
     restart: always

@@ -16,4 +16,4 @@ services:
     restart: always
 
 network:
-  mysql:
+  mysql-haakma-org:

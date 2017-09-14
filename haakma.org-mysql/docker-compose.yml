@@ -10,4 +10,4 @@ services:
     - "/home/sido/mysql/haakma.org/:/var/lib/mysql/"
 
 networks:
-  mysql:
+  mysql-haakma-org:

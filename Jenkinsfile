@@ -40,7 +40,7 @@ node {
       Kind regards,
       <br>
       <br>
-      Build-team''', subject: 'New version of ${JOB_NAME} - ' + pom.version, to: 'sido@haakma.org'
+      Build-team''', subject: 'All backups for *.haakma.org are completed', to: 'sido@haakma.org'
     currentBuild.result = 'SUCCESS';
   }
 }

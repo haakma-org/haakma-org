@@ -26,8 +26,8 @@ echo "[INFO] Backup POSTFIX-configuration : ${POSTFIX_CONFIG_DIR}"
 tar -cvf ${BASE_DIR}/${DATE}_haakma_mail_postfix.tar ${POSTFIX_CONFIG_DIR}
 echo "[INFO] Backup DOVECOT-configuration : ${DOVECOT_CONFIG_DIR}"
 tar -cvf ${BASE_DIR}/${DATE}_haakma_mail_dovecot.tar ${DOVECOT_CONFIG_DIR}
-echo "[INFO] Backup mail data directory: ${MAIL_DIR}/haakma.org
-sudo tar -cvf ${BASE_DIR}/${DATE}_haakma_mail_maildir.tar ${MAIL_DIR}/haakma.org
+echo "[INFO] Backup mail data directory: ${MAIL_DIR}/haakma.org"
+tar -cvf ${BASE_DIR}/${DATE}_haakma_mail_maildir.tar ${MAIL_DIR}/haakma.org
 
 echo "***************************************************************"
 

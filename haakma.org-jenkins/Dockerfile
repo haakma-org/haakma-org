@@ -2,6 +2,9 @@ FROM jenkinsci/blueocean:latest
 
 USER root
 
+# update apk
+RUN apk update
+
 # Install gnupg-key package
 RUN apk add gpgme
 # Install mysql-client for mysqldump command

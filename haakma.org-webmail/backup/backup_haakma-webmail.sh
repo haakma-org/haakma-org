@@ -18,12 +18,15 @@ echo "* Commence backup webmail.haakma.org                          *"
 echo "***************************************************************"
 
 echo "[INFO] Backup MySQL schema : ${SQL_SCHEMA}"
-mysqldump -u ${SQL_USER} -p${SQL_PASSWORD} ${SQL_SCHEMA} > ${BASE_DIR}/${DATE}_haakma_mail.sql
+mysqldump -u ${SQL_USER} -p${SQL_PASSWORD} ${SQL_SCHEMA} -h ${SQL_HOST} > ${BASE_DIR}/${DATE}_haakma_mail.sql
 
 echo "[INFO] Backup data directory : ${WWW_DIR}/webmail.haakma.org/"
 tar -cvf ${BASE_DIR}/${DATE}_haakma_mail.tar ${WWW_DIR}/webmail.haakma.org/
+echo "[INFO] Backup POSTFIX-configuration : ${POSTFIX_CONFIG_DIR}"
 tar -cvf ${BASE_DIR}/${DATE}_haakma_mail_postfix.tar ${POSTFIX_CONFIG_DIR}
+echo "[INFO] Backup DOVECOT-configuration : ${DOVECOT_CONFIG_DIR}"
 tar -cvf ${BASE_DIR}/${DATE}_haakma_mail_dovecot.tar ${DOVECOT_CONFIG_DIR}
+echo "[INFO] Backup mail data directory: ${MAIL_DIR}/haakma.org
 sudo tar -cvf ${BASE_DIR}/${DATE}_haakma_mail_maildir.tar ${MAIL_DIR}/haakma.org
 
 echo "***************************************************************"

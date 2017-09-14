@@ -28,7 +28,7 @@ The job that are located at the Jenkins are divided into 2 main items:
 
 * Backup jobs
 * Software jobs
-  * Opensource community
+  * semver-maven-plugin
   * Granny-Connect
 
 ## Backup

@@ -15,9 +15,9 @@ echo "* Commence backup www.haakma.org                              *"
 echo "***************************************************************"
 
 echo "[INFO] Backup MySQL schema : ${SQL_SCHEMA}"
-mysqldump -u ${SQL_USER} -p${SQL_PASSWORD} ${SQL_SCHEMA} > ${BASE_DIR}/${DATE}_haakma.sql
+mysqldump -u ${SQL_USER} -p${SQL_PASSWORD} ${SQL_SCHEMA} -h ${SQL_HOST} > ${BASE_DIR}/${DATE}_haakma.sql
 
 echo "[INFO] Backup data directory : ${WWW_DIR}/wwww.haakma.org/"
-tar -cvf ${BASE_DIR}/${DATE}_haakma.tar ${WWW_DIR}/haakma.org/
+tar -cvf ${BASE_DIR}/${DATE}_haakma.tar ${WWW_DIR}/www.haakma.org/
 
 echo "***************************************************************"

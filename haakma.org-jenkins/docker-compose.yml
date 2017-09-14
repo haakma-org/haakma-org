@@ -2,6 +2,7 @@ version : '3'
 
 services:
   jenkins-haakma-org:
+    restart: always
     build: .
     ports:
      - 7000:8080
@@ -13,7 +14,8 @@ services:
      - /srv/maildirs:/home/mail
      - /etc/postfix:/home/config/postfix
      - /etc/dovecot:/home/config/dovecot
-    restart: always
+    networks:
+     - mysql-haakma-org
 
-network:
+networks:
   mysql-haakma-org:

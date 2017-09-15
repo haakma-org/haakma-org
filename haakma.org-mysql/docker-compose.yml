@@ -8,6 +8,8 @@ services:
     - "/home/sido/mysql/haakma.org/:/var/lib/mysql/"
    networks:
     - mysql-haakma-org
+   environment:
+    - MYSQL_RANDOM_ROOT_PASSWORD=yes
 
 networks:
   mysql-haakma-org:

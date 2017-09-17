@@ -5,7 +5,8 @@ services:
    restart: always
    image: mysql:5.7.18
    volumes:
-    - "/home/sido/mysql/haakma.org/:/var/lib/mysql/"
+    - /home/sido/mysql/haakma.org/production:/var/lib/mysql/
+    - /hone/sido/mysql/haakma.org/dumps:/docker-entrypoint-initdb.d
    networks:
     - mysql-haakma-org
    environment:

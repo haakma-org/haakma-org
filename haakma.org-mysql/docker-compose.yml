@@ -6,7 +6,7 @@ services:
    image: mysql:5.7.18
    volumes:
     - /home/sido/mysql/production/haakma.org:/var/lib/mysql
-    - /hone/sido/mysql/dumps/haakma.org:/docker-entrypoint-initdb.d
+    - /home/sido/mysql/dumps/haakma.org:/docker-entrypoint-initdb.d
    networks:
     - mysql-haakma-org
    environment:

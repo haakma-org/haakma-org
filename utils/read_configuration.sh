@@ -48,5 +48,4 @@ function read_config() {
         echo "[ERROR] ${PROPERTY_FILE} not found"
         exit 1
     fi
-    echo "***************************************************************"
 }

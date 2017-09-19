@@ -10,9 +10,9 @@ services:
     - /home/sido/mysql/production/haakma.org:/var/lib/mysql
     - /home/sido/mysql/dumps/haakma.org:/docker-entrypoint-initdb.d
    networks:
-    - mysql-haakma-org
+    - haakma-network
    environment:
     - MYSQL_RANDOM_ROOT_PASSWORD=yes
 
 networks:
-  mysql-haakma-org:
+  haakma-network:

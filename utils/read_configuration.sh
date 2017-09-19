@@ -25,23 +25,23 @@ function read_config() {
             done < "${PROPERTY_FILE}"
 
         if [[ ! -z ${SQL_USER} ]]; then
-            echo "[INFO] Export SQL_USER=" ${SQL_USER}
+            echo "[INFO] Export SQL_USER="${SQL_USER}
             export SQL_USER=${SQL_USER}
         fi
         if [[ ! -z ${SQL_PASSWORD} ]]; then
-            echo "[INFO] Export SQL_PASSWORD=" ${SQL_PASSWORD}
+            echo "[INFO] Export SQL_PASSWORD=********"
             export SQL_PASSWORD=${SQL_PASSWORD}
         fi
         if [[ ! -z ${SQL_SCHEMA} ]]; then
-            echo "[INFO] Export SQL_SCHEMA=" ${SQL_SCHEMA}
+            echo "[INFO] Export SQL_SCHEMA="${SQL_SCHEMA}
             export SQL_SCHEMA=${SQL_SCHEMA}
         fi
         if [[ ! -z ${SQL_HOST} ]]; then
-            echo "[INFO] Export SQL_HOST=" ${SQL_HOST}
+            echo "[INFO] Export SQL_HOST="${SQL_HOST}
             export SQL_HOST=${SQL_HOST}
         fi
         if [[ ! -z ${SQL_HOST} ]]; then
-            echo "[INFO] Export SQL_PORT=" ${SQL_PORT}
+            echo "[INFO] Export SQL_PORT="${SQL_PORT}
             export SQL_PORT=${SQL_PORT}
         fi
     else

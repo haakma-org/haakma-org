@@ -3,15 +3,17 @@ pipeline {
     cron('H 4/* 0 0 1-5')
   }
   agent any
+  parameters {
+    string(name: 'GIT_REMOTE_USER', defaultValue: 'jenkins', description: 'Jenkins build user'),
+    string(name: 'GIT_REMOTE_URL', defaultValue: 'github.com/haakma-org/haakma-org', description: 'GitHub url')
+  }
   stages {
     stage('Preparation') {
       steps {
-        def gitRemoteUser = 'jenkins'
-        def gitRemoteUrl = 'github.com/haakma-org/haakma-org'
         // Clean workspace
         step([$class: 'WsCleanup', cleanWhenFailure: false])
         // Get code from github.com
-        checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jenkins-git', url: 'http://' + gitRemoteUser + '@' + gitRemoteUrl + '.git']]]
+        checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jenkins-git', url: 'http://${params.GIT_REMOTE_USER}@${params.GIT_REMOTE_URL}.git']]]
       }
     }
     stage('Backup haakma.org') {
@@ -41,7 +43,6 @@ pipeline {
     stage('Notify') {
       steps {
         slackSend channel: '#backup', color: 'good', message: 'Backup haakma.org successfull', teamDomain: 'https://haakma.slack.com/'
-        currentBuild.result = 'SUCCESS';
       }
     }
   }

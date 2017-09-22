@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  properties([pipelineTriggers([[$class: 'PeriodicFolderTrigger', interval: '1d']])])
+  options([pipelineTriggers([[$class: 'PeriodicFolderTrigger', interval: '1d']])])
   parameters {
     string(name: 'GIT_REMOTE_USER', defaultValue: 'jenkins', description: 'Jenkins build user')
     string(name: 'GIT_REMOTE_URL', defaultValue: 'github.com/haakma-org/haakma-org', description: 'GitHub url')

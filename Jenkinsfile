@@ -1,7 +1,7 @@
 pipeline {
   agent any
-  options {
-    pipelineTriggers([[$class: 'PeriodicFolderTrigger', interval: '1d']])
+  triggers {
+    cron '@daily'
   }
   parameters {
     string(name: 'GIT_REMOTE_USER', defaultValue: 'jenkins', description: 'Jenkins build user')

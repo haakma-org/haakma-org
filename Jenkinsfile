@@ -3,17 +3,13 @@ pipeline {
   triggers {
     cron '@daily'
   }
-  parameters {
-    string(name: 'GIT_REMOTE_USER', defaultValue: 'jenkins', description: 'Jenkins build user')
-    string(name: 'GIT_REMOTE_URL', defaultValue: 'github.com/haakma-org/haakma-org', description: 'GitHub url')
-  }
   stages {
     stage('Preparation') {
       steps {
         // Clean workspace
         step([$class: 'WsCleanup', cleanWhenFailure: false])
         // Get code from github.com
-        checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jenkins-git', url: 'http://' + ${params.GIT_REMOTE_USER} + '@' + ${params.GIT_REMOTE_URL} + '.git']]]
+        checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: 'master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jenkins-git', url: 'http://jenkins@github.com/haakma-org/haakma-org.git']]]
       }
     }
     stage('Backup haakma.org') {

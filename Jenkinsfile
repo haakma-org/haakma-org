@@ -38,7 +38,7 @@ pipeline {
     }
     stage('Notify') {
       steps {
-        slackSend channel: '#backup', color: 'good', message: 'Backup `env.JOB_NAME` #env.BUILD_NUMBER:\nenv.BUILD_URL', teamDomain: 'https://haakma.slack.com/', token: ''
+        slackSend channel: '#backup', color: 'good', message: 'Backup `${JOB_NAME}` #${BUILD_NUMBER}:\n${BUILD_URL}', teamDomain: 'https://haakma.slack.com/', token: ''
       }
     }
   }

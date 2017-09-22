@@ -1,6 +1,9 @@
 node {
   def gitRemoteUser = 'jenkins'
   def gitRemoteUrl = 'github.com/haakma-org/haakma-org'
+  triggers {
+    cron('H 4/* 0 0 1-5')
+  }
   stage('Preparation') {
     // Clean workspace
     step([$class: 'WsCleanup', cleanWhenFailure: false])
@@ -24,23 +27,7 @@ node {
       sh "./utils/move_old_backups.sh"
     }
   stage('Notify') {
-    emailext body: '''Hi everybody,
-      <br>
-      <br>
-      All backups are successfully performed
-      <br>
-      <br>
-      <ul>
-      <li>haakma.org</li>
-      <li>verbouw.haakma.org</li>
-      <li>webmail.haakma.org</li>
-      </ul> 
-      <br>
-      <br>
-      Kind regards,
-      <br>
-      <br>
-      Build-team''', subject: 'All backups for *.haakma.org are completed', to: 'sido@haakma.org'
+    slackSend channel: '#jenkins-backup-haakma-org', color: 'good', message: 'Backup haakma.org successfull', teamDomain: 'haakma-org', token: 'token'
     currentBuild.result = 'SUCCESS';
   }
 }

@@ -27,7 +27,7 @@ node {
       sh "./utils/move_old_backups.sh"
     }
   stage('Notify') {
-    slackSend channel: '#jenkins-backup-haakma-org', color: 'good', message: 'Backup haakma.org successfull', teamDomain: 'haakma-org', token: 'token'
+    slackSend channel: '#backup', color: 'good', message: 'Backup haakma.org successfull', teamDomain: 'https://haakma.slack.com/'
     currentBuild.result = 'SUCCESS';
   }
 }

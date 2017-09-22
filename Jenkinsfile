@@ -2,12 +2,12 @@ pipeline {
   triggers {
     cron('H 4/* 0 0 1-5')
   }
-  def gitRemoteUser = 'jenkins'
-  def gitRemoteUrl = 'github.com/haakma-org/haakma-org'
   agent any
   stages {
     stage('Preparation') {
       steps {
+        def gitRemoteUser = 'jenkins'
+        def gitRemoteUrl = 'github.com/haakma-org/haakma-org'
         // Clean workspace
         step([$class: 'WsCleanup', cleanWhenFailure: false])
         // Get code from github.com

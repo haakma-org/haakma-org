@@ -36,10 +36,19 @@ pipeline {
         sh "./utils/move_old_backups.sh"
       }
     }
-    stage('Notify') {
-      steps {
-        slackSend channel: '#backup', color: 'good', message: 'Backup `${JOB_NAME}` #${BUILD_NUMBER}:\n${BUILD_URL}', teamDomain: 'https://haakma.slack.com/', token: ''
+  }
+  post {
+    success {
+      slackSend channel: '#backup',
+                          color: 'good',
+                          message: "The backup ${currentBuild.fullDisplayName} | ${env.BUILD_NUMBER} completed successfully."
       }
     }
+    failure {
+          slackSend channel: '#backup',
+                              color: 'red',
+                              message: "The backup ${currentBuild.fullDisplayName} | ${env.BUILD_NUMBER} has failed."
+          }
+        }
   }
 }

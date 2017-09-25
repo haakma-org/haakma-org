@@ -40,15 +40,15 @@ pipeline {
   post {
     success {
       slackSend channel: '#backup',
-                          color: 'good',
-                          message: "The backup ${currentBuild.fullDisplayName} | ${env.BUILD_NUMBER} completed successfully."
+                color: 'good',
+                message: "The backup ${currentBuild.fullDisplayName} | ${env.BUILD_NUMBER} completed successfully."
       }
     }
     failure {
-          slackSend channel: '#backup',
-                              color: 'red',
-                              message: "The backup ${currentBuild.fullDisplayName} | ${env.BUILD_NUMBER} has failed."
-          }
-        }
+      slackSend channel: '#backup',
+                color: 'red',
+                message: "The backup ${currentBuild.fullDisplayName} | ${env.BUILD_NUMBER} has failed."
+      }
+    }
   }
 }

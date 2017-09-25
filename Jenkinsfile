@@ -41,12 +41,12 @@ pipeline {
     success {
       slackSend channel: '#backup',
                 color: 'good',
-                message: "The backup <${env.PROJECT_URL}|${env.JOB_NAME}> | #${env.BUILD_NUMBER} completed successfully."
+                message: "The backup <${env.BUILD_URL}|${env.JOB_NAME}> | #${env.BUILD_NUMBER} completed successfully."
     }
     failure {
       slackSend channel: '#backup',
                 color: 'red',
-                message: "The backup <${env.PROJECT_URL}|${env.JOB_NAME}> | #${env.BUILD_NUMBER} has failed."
+                message: "The backup <${env.BUILD_URL}|${env.JOB_NAME}> | #${env.BUILD_NUMBER} has failed."
     }
   }
 }

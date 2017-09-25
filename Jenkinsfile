@@ -41,12 +41,14 @@ pipeline {
     success {
       slackSend channel: '#backup',
                 color: 'good',
-                message: "The backup ${currentBuild.fullDisplayName} completed successfully."
+                mrkdwn: true,
+                message: "The backup [${env.JOB_NAME](${env.PROJECT_URL}) | _#${env.BUILD_NUMBER}_ completed successfully."
     }
     failure {
       slackSend channel: '#backup',
                 color: 'red',
-                message: "The backup ${currentBuild.fullDisplayName} has failed."
+                mrkdwn: true,
+                message: "The backup [${env.JOB_NAME](${env.PROJECT_URL}) | _#${env.BUILD_NUMBER}_ has failed."
     }
   }
 }

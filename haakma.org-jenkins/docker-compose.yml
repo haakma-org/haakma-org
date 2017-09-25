@@ -15,8 +15,8 @@ services:
      - /etc/postfix:/home/config/postfix
      - /etc/dovecot:/home/config/dovecot
     networks:
-     - haakmaorgmysql_haakma-network
+     - haakmaorg_haakma-network
 
 networks:
-  haakmaorgmysql_haakma-network:
+  haakmaorghaakma-network:
     external: true

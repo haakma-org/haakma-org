@@ -14,7 +14,7 @@ services:
    environment:
     - MYSQL_RANDOM_ROOT_PASSWORD=yes
 
-  volume:
+  volumes:
     - data-haakma-org:
 
 networks:

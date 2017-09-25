@@ -2,9 +2,15 @@
 
 We are running mulitple MySQL servers in haakma.org
 
+
+**haakma.org**
 - haakma.org
 - webmail.haakma.org
 - verbouw.haakma.org
+
+**grotevriendelijkedames.nl**
+- grotevriendelijkedames.nl
+- admin.grotevriendelijkedames.nl
 
 When you want to connect to the docker please execute t he following command:
 
@@ -15,6 +21,11 @@ Make sure you use ***127.0.0.1*** and NOT localhost. Docker binds to 127.0.0.1 n
 ## Backup
 
 Runs via the [Jenkins](http://jenkins.haakma.org)
+
+## Restore
+
+Put the backups in the initialization directory of the mysql-docker (***/docker-entrypoint-initdb.d***).
+When the docker boots all the schema's that are in that directoryt will be loaded in the MySQL server.  
 
 
 

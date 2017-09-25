@@ -7,12 +7,15 @@ services:
    ports:
     - 13306:3306
    volumes:
-    - /home/sido/mysql/production/haakma.org:/var/lib/mysql
+    - data-haakma-org
     - /home/sido/mysql/dumps/haakma.org:/docker-entrypoint-initdb.d
    networks:
     - haakma-network
    environment:
     - MYSQL_RANDOM_ROOT_PASSWORD=yes
+
+  volume:
+    - data-haakma-org
 
 networks:
   haakma-network:

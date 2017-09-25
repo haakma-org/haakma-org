@@ -7,7 +7,7 @@ source ${BASE_PATH}/utils/read_configuration.sh
 read_config "/home/config/haakma_webmail.properties"
 
 DATE=`date +%Y-%m-%d`
-BASE_DIR=/home/backup/today
+BASE_DIR=/home/backup/haakma.org/today
 WWW_DIR=/home/sites
 MAIL_DIR=/home/mail
 POSTFIX_CONFIG_DIR=/home/config/postfix/

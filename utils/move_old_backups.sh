@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_DIR=/home/backup
+BASE_DIR=/home/backup/haakma.org
 
 echo "***************************************************************"
 echo "* Cleanup old backups                                         *"

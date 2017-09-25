@@ -7,7 +7,7 @@ source ${BASE_PATH}/utils/read_configuration.sh
 read_config "/home/config/haakma_site.properties"
 
 DATE=`date +%Y-%m-%d`
-BASE_DIR=/home/backup/today
+BASE_DIR=/home/backup/today/haakma.org
 WWW_DIR=/home/sites
 
 echo "***************************************************************"

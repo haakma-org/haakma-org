@@ -1,7 +1,6 @@
-# MySQL
+# MySQL-server haakma.org
 
 We are running mulitple MySQL servers in haakma.org
-
 
 **haakma.org**
 - haakma.org
@@ -26,7 +25,6 @@ Runs via the [Jenkins](http://jenkins.haakma.org)
 
 Put the backups in the initialization directory of the mysql-docker (***/docker-entrypoint-initdb.d***).
 When the docker boots all the schema's that are in that directoryt will be loaded in the MySQL server.  
-
 
 
 

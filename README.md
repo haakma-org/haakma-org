@@ -27,10 +27,14 @@ There are several services available on haakma.org.
     * docker-haakma-org.conf
 * Dovecot
   * This is in the daily backup cycle
+  * [DoveCot](https://www.dovecot.org)
 * Postfix
   * This is in the daily backup cycle
+  * [PostFix](http://www.postfix.org)
 * MySQL
   * Configuration is found in haakma.org-mysql. IN the docker-compose file the MySQL-server is setup. 
+* Roundcube
+  * [RoundCube](https://www.roundcube.net)
 
 ## Backup
 

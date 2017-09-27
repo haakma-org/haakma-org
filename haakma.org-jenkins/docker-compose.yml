@@ -16,10 +16,10 @@ services:
      - /etc/dovecot:/home/config/dovecot
     networks:
      - haakmaorgmysql_haakma-network
-     - bronsenprojectmysql_bronsenproject-network
+     - bronsenprojectnlmysql_bronsenproject-network
 
 networks:
   haakmaorgmysql_haakma-network:
     external: true
-  bronsenprojectmysql_bronsenproject-network:
+  bronsenprojectnlmysql_bronsenproject-network:
     external: true

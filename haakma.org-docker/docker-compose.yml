@@ -5,6 +5,6 @@ services:
    restart: always
    image: rancher/server:latest
    ports:
-    - 8080:8080
+    - 9000:8080
    volumes:
     - "/home/sido/rancher/mysql:/var/lib/mysql/"

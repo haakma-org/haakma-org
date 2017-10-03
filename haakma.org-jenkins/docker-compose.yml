@@ -14,6 +14,7 @@ services:
      - /srv/maildirs:/home/mail
      - /etc/postfix:/home/config/postfix
      - /etc/dovecot:/home/config/dovecot
+     - /etc/vsftpd:/home/config/vsftpd
     networks:
      - haakmaorgmysql_haakma-network
      - bronsenprojectnlmysql_bronsenproject-network

@@ -32,6 +32,12 @@ pipeline {
         sh "./haakma.org-webmail/backup/backup_haakma-webmail.sh"
       }
     }
+    stage('Backup ftp.haakma.org') {
+      steps {
+        echo "Backup ftp.haakma.org"
+        sh "./haakma.org-ftp/backup/backup_haakma-ftp.sh"
+      }
+    }
     stage('Cleanup old backups') {
       steps {
         echo "Cleanup old backups"

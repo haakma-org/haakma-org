@@ -12,7 +12,7 @@ RUN apk add mysql-client
 
 # Setup backup directories
 RUN mkdir /home/backup
-RUN chown jenkins:jenkins /home/backup
+RUN chown -R jenkins:jenkins /home/backup
 
 # Setup site mapping
 RUN mkdir /home/sites/
@@ -23,6 +23,7 @@ RUN mkdir /home/mail
 RUN mkdir -p /home/config/
 RUN mkdir -p /home/config/postfix
 RUN mkdir -p /home/config/dovecot
+RUN mkdir -p /home/config/vsftpd
 RUN chown -R jenkins:jenkins /home/mail
 RUN chown -R jenkins:jenkins /home/config
 

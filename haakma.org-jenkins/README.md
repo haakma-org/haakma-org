@@ -29,13 +29,18 @@ The job that are located at the Jenkins are divided into 2 main items:
 * Backup jobs
 * Software jobs
   * semver-maven-plugin
-  * Granny-Connect
+  * granny-connect
 
 ## Backup
 
 * haakma.org-site
 * haakma.org-webmail
+  * haakma.org-dovecot
+  * haakma.org-postfix
+  * haakma.org-maildir
 * haakma.org-verbouw
+* haakma.org-mysql
+* haakma.org-ftp
 
 * grotevriendelijkedames.nl-site
 
@@ -44,6 +49,7 @@ The job that are located at the Jenkins are divided into 2 main items:
 * bronsenproject.nl-site
 * bronsenproject.nl-webmail
 * bronsenproject.nl-finance
+* bronsenproject.nl-mysql
 
 ## Opensource community
 

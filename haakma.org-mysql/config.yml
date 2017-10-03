@@ -1,0 +1,5 @@
+name: haakma-mysql
+description: |
+  The Haakma MySQL server that supports serveral websites
+version: 1.0.0
+category: Management

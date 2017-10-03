@@ -1,5 +1,5 @@
 .catalog:
   name: "Haakma MySQL server"
-  version: "1.0.0"
+  version: v1.0.0
   description: The Haakma MySQL server that supports serveral websites
   minimum_rancher_version: v1.6.3

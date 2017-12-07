@@ -10,7 +10,9 @@ RUN apk add gpgme
 # Install mysql-client for mysqldump command
 RUN apk add mysql-client
 # Install nodejs
-apk add --no-cache --virtual .build-deps ca-certificates openssl
+RUN apk add --no-cache --virtual .build-deps
+RUN apk add ca-certificates
+RUN apk add openssl
 RUN apk add --update nodejs
 
 # Setup backup directories

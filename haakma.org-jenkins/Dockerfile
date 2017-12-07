@@ -9,6 +9,9 @@ RUN apk update
 RUN apk add gpgme
 # Install mysql-client for mysqldump command
 RUN apk add mysql-client
+# Install nodejs
+RUN apk add openssl
+RUN apk add --update nodejs
 
 # Setup backup directories
 RUN mkdir /home/backup
@@ -26,6 +29,9 @@ RUN mkdir -p /home/config/dovecot
 RUN mkdir -p /home/config/vsftpd
 RUN chown -R jenkins:jenkins /home/mail
 RUN chown -R jenkins:jenkins /home/config
+
+# Setup yarn for frontend builds
+RUN npm install -g yarn
 
 # Return to user jenkins (was root)
 USER jenkins

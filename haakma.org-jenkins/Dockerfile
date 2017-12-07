@@ -31,8 +31,9 @@ RUN chown -R jenkins:jenkins /home/mail
 RUN chown -R jenkins:jenkins /home/config
 
 # Setup yarn for frontend builds
-RUN npm install -g yarn
+RUN npm install -g n
 RUN n stable
+RUN npm install -g yarn
 
 # Return to user jenkins (was root)
 USER jenkins

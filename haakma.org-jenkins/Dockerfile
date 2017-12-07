@@ -32,6 +32,7 @@ RUN chown -R jenkins:jenkins /home/config
 
 # Setup yarn for frontend builds
 RUN npm install -g yarn
+RUN n stable
 
 # Return to user jenkins (was root)
 USER jenkins

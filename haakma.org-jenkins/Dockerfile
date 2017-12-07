@@ -10,9 +10,9 @@ RUN apk add gpgme
 # Install mysql-client for mysqldump command
 RUN apk add mysql-client
 # Install nodejs
-RUN apk add --no-cache --virtual .build-deps
 RUN apk add ca-certificates
 RUN apk add openssl
+RUN apk add curl
 RUN apk add --update nodejs
 
 # Setup backup directories
@@ -36,10 +36,8 @@ RUN chown -R jenkins:jenkins /home/config
 RUN npm install -g n
 RUN n stable
 RUN npm install -g yarn
-RUN set -ex \
-  && wget -qO- "https://github.com/dustinblackman/phantomized/releases/download/2.1.1/dockerized-phantomjs.tar.gz" | tar xz -C / \
-  && npm install -g phantomjs
-RUN apk del .build-deps
+RUN curl -Ls https://github.com/fgrehm/docker-phantomjs2/releases/download/v2.0.0-20150722/dockerized-phantomjs.tar.gz \
+       | tar xz -C /
 
 # Return to user jenkins (was root)
 USER jenkins
